@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Terms Meter",
+  "version": "0.1.0",
+  "description": "A small ToS;DR-powered terms-of-service meter on websites.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://api.tosdr.org/*"],
+  "background": {"service_worker": "background.js", "type": "module"},
+  "content_scripts": [{"matches": ["https://*/*", "http://*/*"], "js": ["content.js"], "run_at": "document_idle"}]
+}
